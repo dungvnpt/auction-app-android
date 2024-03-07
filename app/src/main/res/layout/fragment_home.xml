@@ -5,7 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/title"
@@ -43,10 +44,10 @@
                 android:id="@+id/edt_search"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/uiv2_bkg_white_corner_gray_300_border_8"
                 android:gravity="top|start"
                 android:paddingTop="@dimen/dimen_12dp"
                 android:hint="search"
+                android:background="@color/transparent_background"
                 android:inputType="textMultiLine"
                 android:paddingStart="@dimen/dimen_16dp"
                 android:textColor="@color/neural_900"

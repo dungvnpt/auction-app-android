@@ -3,35 +3,35 @@ package com.example.auctionapp.view;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.auctionapp.R;
+import com.example.auctionapp.databinding.FragmentFavouriteBinding;
+import com.example.auctionapp.viewmodel.FavouriteViewModel;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 
 public class FavouriteFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentFavouriteBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private SmartTabLayout smartTabLayout;
+    private ViewPager viewPager;
 
+
+    private FavouriteViewModel viewModel;
     public FavouriteFragment() {
         // Required empty public constructor
     }
 
 
-    public static FavouriteFragment newInstance(String param1, String param2) {
+    public static FavouriteFragment newInstance() {
         FavouriteFragment fragment = new FavouriteFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -40,8 +40,6 @@ public class FavouriteFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -49,6 +47,7 @@ public class FavouriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favourite, container, false);
+        binding = FragmentFavouriteBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 }
